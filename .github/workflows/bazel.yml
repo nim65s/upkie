@@ -12,4 +12,6 @@ jobs:
             - run: python -m pip install --upgrade pip
             - run: python -m pip install numpy pin pin-pink
             - run: python -m pip freeze
+            - run: python -c "import sys; print(sys.path)"
+            - run: python -c "import tomli; print(tomli.__file__)"
             - run: tools/bazelisk coverage --combined_report=lcov --compilation_mode=fastbuild --instrument_test_targets //...
